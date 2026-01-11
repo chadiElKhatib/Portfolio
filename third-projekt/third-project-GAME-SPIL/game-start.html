@@ -6,32 +6,37 @@
     <title>Gæt et tal</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>Gæt et tal</h1>
+    <div class="page">
+      <main class="content">
+        <h1>Gæt et tal</h1>
 
-    <div class="container">
-      <input
-        id="guess"
-        type="number"
-        min="1"
-        max="1000"
-        placeholder="Skriv dit gæt"
-      />
+        <div class="container">
+          <input
+            id="guess"
+            type="number"
+            min="1"
+            max="1000"
+            placeholder="Skriv dit gæt"
+          />
 
-      <p id="GetResult"></p>
-      <p><span id="timer">0</span></p>
-      <ul id="guessList"></ul>
-      <button id="guessButton" onclick="checkGuess()">GÆT</button>
-      <button id="restartButton" style="display: none">SPIL IGEN</button>
+          <p id="GetResult"></p>
+          <p><span id="timer">60</span> sekunder tilbage</p>
+
+          <ul id="guessList"></ul>
+
+          <button id="guessButton" onclick="checkGuess()">GÆT</button>
+          <button id="restartButton" style="display: none">SPIL IGEN</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>Lavet af Chadi El-Khatib</p>
+        <a href="index.html" class="back-line">Back to start</a>
+      </footer>
+
+      <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
-    <footer>
-      Lavet af Chadi El-Khatib
-      <p>
-        <a href="index.html" class="back-line">← Back to start</a>
-
-        >
-      </p>
-    </footer>
   </body>
 </html>
