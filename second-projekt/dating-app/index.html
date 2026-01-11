@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h1>Match Maker</h1>
+      <h3>Find your spark, your soulmate, your one and only -</h3>
+      <h3>
+        Join Match Maker like thousand others and start your love story today!
+      </h3>
+
+      <form action="/submitregister" method="post">
+        <h2>Personal information</h2>
+        <div class="personal-info">
+          <label for="name">Full name <span class="required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Full name"
+            required
+            pattern="[A-Za-zÆØÅæøå\s\-]+"
+          />
+
+          <label for="email">E-mail <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="E-mail" required />
+
+          <label for="birth">Birth day <span class="required">*</span></label>
+          <input
+            type="date"
+            id="birth"
+            required
+            min="1925-01-01"
+            max="2010-01-01"
+          />
+
+          <label for="gender">Gender <span class="required">*</span></label>
+          <select name="gender" id="gender" required>
+            <option value="" disabled selected>Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+
+          <label for="location">Location <span class="required">*</span></label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Location"
+            required
+          />
+        </div>
+
+        <h2>Dating preference</h2>
+
+        <section class="pref">
+          <label id="lbl-interested">
+            interested in <span class="required">*</span>
+          </label>
+
+          <div id="interested" class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="interest" value="Men" required />
+              <span>Men</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="interest" value="Women" />
+              <span>Women</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="interest" value="Everyone" />
+              <span>Everyone</span>
+            </label>
+          </div>
+
+          <label id="lbl-relationship" for="relationship"
+            >relation type <span class="required">*</span></label
+          >
+
+          <select name="relationship" id="relationship" required>
+            <option value="">Select</option>
+
+            <optgroup label="💞 Serious / Romantic Relationships">
+              <option>Long-term relationship</option>
+              <option>Boyfriend / Monogamous relationship</option>
+              <option>Looking for something serious</option>
+              <option>Want to find love</option>
+              <option>Open to finding “the one”</option>
+            </optgroup>
+
+            <optgroup label="💫 Casual / Open Relationships">
+              <option>Casual dating</option>
+              <option>Casual, but honest</option>
+              <option>Open to something informal</option>
+              <option>Light and fun — see where it goes</option>
+              <option>Friendship with potential</option>
+            </optgroup>
+
+            <optgroup label="🌈 Alternative or Open Relationship Types">
+              <option>Open relationship</option>
+              <option>Polyamorous</option>
+              <option>Non-monogamous</option>
+              <option>Queer relationships</option>
+              <option>Partnership without labels</option>
+            </optgroup>
+
+            <optgroup label="😄 More Personal / Playful Options">
+              <option>
+                Looking for someone to laugh (and maybe love) with
+              </option>
+              <option>
+                Not sure what I’m looking for — but I’ll know when I find it
+              </option>
+              <option>Anything from coffee to love</option>
+              <option>Seeing where life takes me</option>
+            </optgroup>
+          </select>
+
+          <label for="age">Age <span class="required">*</span></label>
+          <select name="age" id="age" required>
+            <option value="">Select</option>
+            <option>18-25</option>
+            <option>25-30</option>
+            <option>30-35</option>
+            <option>35-40</option>
+            <option>40-45</option>
+            <option>45-50</option>
+            <option>50-55</option>
+            <option>55-60</option>
+            <option>60-65</option>
+            <option>65-70</option>
+          </select>
+
+          <label for="hobbies">Hobbies & Interests:</label>
+          <textarea name="hobbies" id="hobbies" rows="3"></textarea>
+        </section>
+        <fieldset class="signup-form">
+          <legend>Account Setup</legend>
+
+          <label for="username">Username<span class="required">*</span></label>
+          <input type="text" id="username" placeholder="Username" required />
+
+          <label for="password">password<span class="required">*</span></label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            minlength="8"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).+"
+          />
+
+          <label for="confirm_password"
+            >Confirm password<span class="required">*</span></label
+          >
+          <input
+            type="password"
+            id="confirm_password"
+            placeholder="Confirm password"
+            required
+            oninput="
+    this.setCustomValidity(
+      this.value !== document.getElementById('password').value
+        ? 'Passwords do not match'
+        : ''
+    );
+  "
+          />
+
+          <label class="checkbox-label">
+            I agree to the Terms & Conditions and Privacy Policy.
+            <input type="checkbox" id="terms" required />
+          </label>
+        </fieldset>
+
+        <div class="form-buttons">
+          <button type="submit">SUBMIT</button>
+          <button type="reset">RESET</button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>Made by Chadi El-Khatib</p>
+      <p>2025 Match Maker. All rights reserved.</p>
+      <p>
+        <a href="privacypolicy.html">Privacy Policy</a><br />
+        <a href="/portfolio.html" class="back-line">Back to portofolio</a>
+      </p>
+    </footer>
+  </body>
+</html>

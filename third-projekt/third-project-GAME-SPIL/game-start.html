@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gæt et tal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Gæt et tal</h1>
+
+    <div class="container">
+      <input
+        id="guess"
+        type="number"
+        min="1"
+        max="1000"
+        placeholder="Skriv dit gæt"
+      />
+
+      <p id="GetResult"></p>
+      <p><span id="timer">0</span></p>
+      <ul id="guessList"></ul>
+      <button id="guessButton" onclick="checkGuess()">GÆT</button>
+      <button id="restartButton" style="display: none">SPIL IGEN</button>
+    </div>
+    <script src="script.js"></script>
+    <footer>
+      Lavet af Tarik og Chadi
+      <p>
+        <a
+          href="/third-projekt/third-project-GAME-SPIL/index.html"
+          class="back-line"
+          >Back to start</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

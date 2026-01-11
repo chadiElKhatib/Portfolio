@@ -1,0 +1,250 @@
+:root {
+  --txt: black;
+  --invalid: #e74c3c;
+  --valid: #4caf50;
+  --box-border-color: #000;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  font-size: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(to bottom, #ffc0cb, #800020);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--txt);
+}
+
+h1 {
+    text-align: center;
+font-weight: 300;
+}
+
+h3{
+text-align: center;
+font-weight: 100;
+padding-top: 1px;
+margin: 10px;
+}
+
+.form{
+    max-width: clamp(350px, 95vw, 1100px);
+    margin: clamp(50px, 3vw, 150px) auto 0;
+    background-color: white;
+    border: 2px solid lightgray;
+    padding: 75px;
+    border-radius: 30px;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+
+.pref {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+input,
+select,
+button,
+textarea {
+  background-color: white;
+  border: 2px solid var(--box-border-color);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  text-align: start;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+
+
+input:valid {
+  border-color: var(--valid);
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: var(--invalid);
+}
+
+
+input[type="date"]:valid {  
+    border-color: var(--valid);
+}
+input[type="date"]:invalid:not(:placeholder-shown) {
+  border-color: var(--box-border-color);
+}
+
+
+input[type="date"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #9993;
+}
+
+select:invalid {border-color: var(--box-border-color);}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #999;
+}
+
+input[type="radio"] {
+  appearance: auto;
+  width: auto;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Primær knap */
+.form-buttons button[type="submit"] {
+  background-color: #800020;
+  color: white;
+  border: none;
+}
+
+/* Sekundær knap */
+.form-buttons button[type="reset"] {
+  background-color: transparent;
+  border: 2px solid #800020;
+  color: #800020;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid #800020;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* skjul standard radio */
+.radio-option input {
+  accent-color: #800020;
+  cursor: pointer;
+}
+
+/* hover-effekt */
+.radio-option:hover {
+  background-color: rgba(128, 0, 32, 0.1);
+}
+
+/* valgt radio */
+.radio-option input:checked + span {
+  font-weight: bold;
+}
+
+footer{
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+  color: #ffc0cb;
+  text-decoration: none;
+  margin: 0 30px;
+}
+
+.back-line {
+  display: inline-block; 
+}
+
+.back-line:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+
+/* --- Responsive Breakpoints --- */
+
+/* Mobil: op til 480px*/
+@media screen and (max-width: 480px){
+    .form{
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .form-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Tbalet: 481 til 1023px */
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+ .form {
+        padding: 20px;
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .form-buttons button {
+        flex: 1 1 50%;
+    }
+}
+
+/* Desktop: 1024px+ */
+@media screen and (min-width: 1024px) {
+    .form{
+        max-width: 900px;
+        padding: 30px;
+    }
+}
+

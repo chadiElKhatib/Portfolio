@@ -1,0 +1,82 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #181f3a, #23376d);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.container{
+    background: rgba(255,255,255,0.1);
+    padding: 35px 45px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    min-width: 300px;
+    text-align: center;
+}
+h1{
+    font-size: 2.2rem;
+    
+}
+h2{
+    font-size: 1.4rem;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin: 10px;
+}
+button{
+    background: #3ac6ff;
+    color: #0b0f1f;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+#guess {
+    width: 200px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#guess::placeholder {
+color: #999;
+font-style:italic;
+text-align: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(225, 225, 225, 0.05);
+}
+
+.back-line {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.back-line:hover {
+  opacity: 1;
+}
